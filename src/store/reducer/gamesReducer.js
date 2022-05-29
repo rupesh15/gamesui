@@ -9,8 +9,7 @@ let initialValue = {
 };
 
 const gamesReducer = (state = initialValue, action) => {
-  console.log("value is ", state, action);
-  
+    
   switch (action.type) {
     case "gameName":
       return produce(state, (draft) => {
