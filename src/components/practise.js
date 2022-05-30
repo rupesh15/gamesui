@@ -1,4 +1,4 @@
-import { useRef, useLayoutEffect, useEffect, useState, useContext, createContext } from "react";
+import { useRef, useLayoutEffect, useEffect, useState, useContext, createContext, useMemo } from "react";
 import ReceivedName from './name';
 
 import "../App.css";
@@ -11,6 +11,7 @@ export const Practise = () => {
 
   //useState
   const [input, handleInput] = useState('');
+  const [val, handleVal] = useState(0);
 
   //useRef(manupulate dom element)
   const inputRef = useRef(null);
@@ -25,6 +26,15 @@ export const Practise = () => {
     console.log("inside uselayout effect");
   },[]);
 
+  const powerOfValue = (value) => {
+     let computation = value ** value;
+     return computation;
+  }
+
+  //useMemo
+  const computedValue = useMemo(() => powerOfValue(val), [val] )
+  console.log('computed value is ', computedValue)
+
   const buttonClick = () => {
     let name = inputRef.current.value;
      handleInput(name)
@@ -34,6 +44,11 @@ export const Practise = () => {
   const buttclearBtnonClick = () => {
     inputRef.current.value = "";
   };
+
+  const changeName = (inputVal) => {
+     let numVal = inputVal.target.value;
+     handleVal(numVal)
+  }
 
   return (
     <div className="App">
@@ -45,6 +60,8 @@ export const Practise = () => {
      <PractiseContext.Provider value = {{input,filename}}>
       <ReceivedName/>
      </PractiseContext.Provider>
+      <input type='number' placeholder="enter number" onChange={changeName}/>
+       <div>{computedValue}</div>
     </div>
   );
 };
