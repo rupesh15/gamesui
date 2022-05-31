@@ -1,0 +1,76 @@
+.body .html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.Container{
+    display: flex;
+    flex-direction: row;
+    height: 5rem;
+    width: 100%;
+    background-color: #2C2B29;
+    justify-content: flex-start;
+    position: fixed
+}
+
+.imgStyle{
+    width: 10rem;
+    height: 5rem;
+}
+
+.btn_style{
+   width: 10rem;
+   background-color: #2C2B29;
+   border: none;
+}
+
+.btn_style:focus{
+    width: 10rem;
+    background-color:#D03739;
+    border: none;
+}
+
+.btn_text{
+    font-family: cursive;
+    font-size: 1rem;
+    font-weight: strong;
+    color: azure;
+}
+
+.search_container{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    height: 3rem;
+    margin: 1rem
+}
+
+.input_search{
+   width: 30%;
+   border-radius: 5rem;
+   background-color: #D03739;
+   color: azure;
+   font-size: 1rem;
+}
+
+::placeholder { 
+    color: azure;
+    font-size: 1rem;
+    font-weight:bolder;
+    text-align: center;
+  }
+
+  .search_logo{
+      position: relative;
+      height: 1.5rem;
+      width: 1.5rem;
+      right: 5%;
+      top: 20%;
+  }
+
+  .homeContainer{
+      flex: 1;
+      height: 50rem;
+      background-color: #D03739;
+  }
